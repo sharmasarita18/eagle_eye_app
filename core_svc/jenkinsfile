@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        dockerfile true
-    }
+    agent none
     stages {
         stage("Fix the permission issue") {
 
@@ -9,10 +7,14 @@ pipeline {
 
             steps {
                 sh "sudo chown root:jenkins /run/docker.sock"
+                sh "sudo chown root:jenkins /run/docker.sock"
             }
 
         }
         stage('Stage 1') {
+            agent {
+        dockerfile true
+    }
             steps {
                 echo 'Hello world!' 
                 sh 'echo myname = $myname'
