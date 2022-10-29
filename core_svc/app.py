@@ -1,7 +1,8 @@
 from flask import Flask
-app = Flask("core_svc")
 
+app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
     return 'I am a Core Service'
+ 
