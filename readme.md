@@ -3,4 +3,4 @@ This app contains 5 micro services as followings,
 2) Core
 3) Calculation
 4) Data Provision
-5) Mapping 
+5) Mapping.
