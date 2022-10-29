@@ -5,3 +5,4 @@ RUN pip install flask
 ADD app.py .
 EXPOSE 5000
 CMD flask run --host=0.0.0.0 
+ENV myname="Sarita Sharma"
