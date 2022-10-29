@@ -1,17 +1,16 @@
 pipeline {
     agent none
     stages {
-        // stage("Fix the permission issue") {
+         stage("git check out") {
 
-        //     agent any
+             agent any
 
-        //     steps {
-        //         // sh "sudo chown root:jenkins /run/docker.sock"
-        //         // sh "sudo chown root:jenkins /run/docker.sock"
-        //     }
+             steps {
+                git 'https://github.com/sharmasarita18/eagle_eye_app.git'
+             }
 
-        // }
-        stage('Stage 1') {
+         }
+        stage('Build image') {
             agent {
         dockerfile true
     }
