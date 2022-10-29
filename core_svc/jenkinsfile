@@ -14,7 +14,7 @@ pipeline {
          }
         stage('Build image') {
             agent {
-        core_svc/dockerfile true
+        dockerfile true
     }
             steps {
                 echo 'Hello world!' 
