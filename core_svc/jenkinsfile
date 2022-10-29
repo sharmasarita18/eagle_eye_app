@@ -6,8 +6,10 @@ pipeline {
              agent any
 
              steps {
-                git 'https://github.com/sharmasarita18/eagle_eye_app.git'
-             }
+                git branch: 'developer',
+                credentialsId: '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',
+                url: 'https://github.com/sharmasarita18/eagle_eye_app.git'
+            }
 
          }
         stage('Build image') {
