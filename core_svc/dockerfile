@@ -2,7 +2,7 @@ FROM python:3.8-slim-buster
 ENV FALSK_APP = "app.py"
 RUN mkdir app && cd app
 RUN pip install flask
-ADD app.py .
+ADD /var/lib/jenkins/workspace/SCM-git-pipeline/core_svc/app.py .
 EXPOSE 5000
 CMD flask run --host=0.0.0.0 
 ENV myname="Sarita Sharma"
