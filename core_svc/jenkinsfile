@@ -7,7 +7,7 @@ pipeline {
 
              steps {
                 git branch: 'developer',
-                credentialsId: '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',
+                credentialsId: '03ca8a43-fb79-4040-ad7a-127cfba2703b',
                 url: 'https://github.com/sharmasarita18/eagle_eye_app.git'
             }
 
