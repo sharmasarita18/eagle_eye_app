@@ -1,10 +1,10 @@
 pipeline {
-    agent any
+    agent { lable 'ecsAgent'}
     environment {
-        AWS_ACCOUNT_ID="568624821337"
-        AWS_DEFAULT_REGION="ap-south-1" 
-        IMAGE_REPO_NAME="pipeline-repo"
-        IMAGE_TAG="latest"
+        AWS_ACCOUNT_ID="568624821337" //paste your AWS Account ID
+        AWS_DEFAULT_REGION="ap-south-1" //copy created ECR repo region id
+        IMAGE_REPO_NAME="pipeline-repo" //set your ECR repository name
+        IMAGE_TAG="latest" //mention your desired tag
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
     }
     stages {
@@ -51,6 +51,14 @@ pipeline {
          script {
                 sh "docker tag ${IMAGE_REPO_NAME}:${IMAGE_TAG} ${REPOSITORY_URI}:$IMAGE_TAG"
                 sh "docker push ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}:${IMAGE_TAG}"
+         }
+        }
+      }
+      // Uploading Docker images into AWS ECR
+    stage('Deploy Build') {
+     steps{  
+         script {
+                echo 'running ecs successfully.'
          }
         }
       }
