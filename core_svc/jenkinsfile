@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+     agent { label 'ecsAgent'}
     environment {
         AWS_ACCOUNT_ID="568624821337" //paste your AWS Account ID
         AWS_DEFAULT_REGION="ap-south-1" //copy created ECR repo region id
@@ -56,8 +56,8 @@ pipeline {
       }
       // Uploading Docker images into AWS ECR
     stage('Deploy Build') {
-     agent { label 'ec2ECS'}
-     steps{  
+     //agent { label 'ec2ECS'}
+     steps{ 
          script {
                 echo 'running ecs successfully.'
          }
