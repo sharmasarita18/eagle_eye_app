@@ -55,13 +55,13 @@ pipeline {
         }
       }
       // Uploading Docker images into AWS ECR
-    stage('Deploy Build') {
-     agent { label 'ec2ECS'}
-     steps{ 
-         script {
-                echo 'running ecs successfully.'
-         }
-        }
-      }
+    //stage('Deploy Build') {
+     //agent { label 'ec2ECS'}
+     //steps{ 
+        // script {
+         //       echo 'running ecs successfully.'
+        // }
+        //}
+      //}
 }
 }
